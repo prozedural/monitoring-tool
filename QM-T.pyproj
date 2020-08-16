@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{fdec6249-c478-425f-8b8f-ef349f5d3650}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>simulation_tools\simulation.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="serial_port\arduino_image_sensor _raw.py" />
+    <Compile Include="serial_port\arduino_xy_distance.py" />
+    <Compile Include="serial_port\arduino_image_sensor_matrix.py" />
+    <Compile Include="serial_port\arduino_xy_distance_time.py" />
+    <Compile Include="simulation_tools\simulation.py" />
+    <Compile Include="calibration.py" />
+    <Compile Include="calib_marker.py" />
+    <Compile Include="calib_chessboard.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config.py" />
+    <Compile Include="camera_status.py" />
+    <Compile Include="save_data.py" />
+    <Compile Include="main.py" />
+    <Compile Include="tisgrabber.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="serial_port\" />
+    <Folder Include="simulation_tools\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
